@@ -3,11 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	quantity := 4
-	length, width := 1.2, 2.4
-	customerName := "Damon Cole"
+	length := 1.2
+	width := 2
+	newWidth := float64(width)
 
-	fmt.Println(customerName)
-	fmt.Println("has ordered", quantity, "sheets")
-	fmt.Println(length * width)
+	fmt.Println("Area is", length*newWidth)
+	fmt.Println("length > width?", length > newWidth)
 }
