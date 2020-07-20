@@ -1,28 +1,15 @@
 package main
 
-import "fmt"
-
-var a = "a"
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
 
 func main() {
-	a = "a"
-	b := "b"
-	if true {
-		c := "c"
-		if true {
-			d := "d"
-			fmt.Println(a)
-			fmt.Println(b)
-			fmt.Println(c)
-			fmt.Println(d)
-		}
-		fmt.Println(a)
-		fmt.Println(b)
-		fmt.Println(c)
-		//fmt.Println(d)
-	}
-	fmt.Println(a)
-	fmt.Println(b)
-	//fmt.Println(c)
-	//fmt.Println(d)
+	rand.Seed(time.Now().Unix())
+	target := rand.Intn(100) + 1
+	fmt.Println("I've chosen a random number between 1 and 100")
+
+	fmt.Println("Target is ", target)
 }
