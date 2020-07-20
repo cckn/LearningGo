@@ -1,20 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+)
 
 func main() {
-
-	price := 100
-	fmt.Println("Price is", price, "dollars.")
-
-	taxRate := 0.08
-	tax := float64(price) * taxRate
-	fmt.Println("Tax is", tax, "dollars.")
-
-	total := float64(price) + tax
-	fmt.Println("Total cost is", total, "dollars.")
-
-	availableFunds := 120
-	fmt.Println(availableFunds, "dollars available.")
-	fmt.Println("Within budget?", total <= float64(availableFunds))
+	fmt.Print("Enter a grade: ")
+	reader := bufio.NewReader(os.Stdin)
+	input, err := reader.ReadString('\n')
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(input)
 }
