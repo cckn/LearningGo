@@ -1,11 +1,12 @@
 package main
 
-import "fmt"
-
-func sayHi() {
-	fmt.Println("Hi!")
-}
 func main() {
-	sayHi()
+	var a int = 10
+	println(a) // value
 
+	var pa *int = &a
+	println(pa) // value
+
+	var paValue = *pa
+	println(paValue)
 }
