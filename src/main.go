@@ -1,12 +1,10 @@
 package main
 
+import "fmt"
+
+var num = 6
+
 func main() {
-	var a int = 10
-	println(a) // value
-
-	var pa *int = &a
-	println(pa) // value
-
-	var paValue = *pa
-	println(paValue)
+	double(&num)
+	fmt.Println(num)
 }
