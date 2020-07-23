@@ -8,9 +8,6 @@ func main() {
 
 	defer fileClose()
 
-	var notes []string
-	notes = make([]string, 7)
-
-	log.Print(notes)
-
+	notes := []string{"do", "re", "mi", "fa", "so", "la", "ti"}
+	log.Println(notes[3], notes[6], notes[0])
 }
