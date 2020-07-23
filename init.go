@@ -14,18 +14,16 @@ var logFile *os.File
 func init() {
 
 	logFilePath := fmt.Sprintf("logs/%s", time.Now().Format("20060102"))
-	logFileName := time.Now().Format("15-04-05")
+	logFileName := time.Now().Format("15-04")
 	logFile = logger.InitFile(logFilePath, logFileName)
 
-	log.SetFormatter(&log.TextFormatter{
-		DisableTimestamp:       true,
-		DisableLevelTruncation: true,
-		DisableQuote:           true,
+	log.SetFormatter(&log.JSONFormatter{
+		// DisableTimestamp: true,
 	})
-	log.Info("init")
 
 }
 
 func fileClose() {
+	log.Printf("---------------------END---------------------")
 	_ = logFile.Close()
 }
