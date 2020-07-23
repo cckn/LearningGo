@@ -2,10 +2,9 @@ package main
 
 import (
 	"fmt"
+	"logger"
 	"os"
 	"time"
-
-	logger "logger"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -23,14 +22,10 @@ func init() {
 		DisableLevelTruncation: true,
 		DisableQuote:           true,
 	})
+	log.Info("init")
 
 }
-func main() {
 
-	defer func() {
-		_ = logFile.Close()
-	}()
-
-	log.Fatal("asdasd")
-
+func fileClose() {
+	_ = logFile.Close()
 }
