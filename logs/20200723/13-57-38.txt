@@ -1,0 +1,2 @@
+level=info msg=fasdasd file=logger.go:59 function=init
+level=info msg=asd

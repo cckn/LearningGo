@@ -2,24 +2,35 @@ package main
 
 import (
 	"fmt"
-	"keyboard"
-	"log"
+	"os"
+	"time"
+
+	logger "logger"
+
+	log "github.com/sirupsen/logrus"
 )
 
+var logFile *os.File
+
+func init() {
+
+	logFilePath := fmt.Sprintf("logs/%s", time.Now().Format("20060102"))
+	logFileName := time.Now().Format("15-04-05")
+	logFile = logger.InitFile(logFilePath, logFileName)
+
+	log.SetFormatter(&log.TextFormatter{
+		DisableTimestamp:       true,
+		DisableLevelTruncation: true,
+		DisableQuote:           true,
+	})
+
+}
 func main() {
-	fmt.Print("Enter a grade: ")
 
-	grade, err := keyboard.GetFloat()
-	if err != nil {
-		log.Fatal(err)
+	defer func() {
+		_ = logFile.Close()
+	}()
 
-	}
-	var status string
-	if grade >= 60 {
-		status = "passing"
-	} else {
-		status = "failing"
-	}
-	fmt.Println("A grade of", grade, "is", status)
+	log.Fatal("asdasd")
 
 }
