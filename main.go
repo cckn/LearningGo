@@ -9,18 +9,28 @@ func main() {
 	// Template
 	defer fileClose()
 	log.Println("8. 구조체")
+	log.Println("사용자 정의 타입")
 
-	var myStruct struct {
-		number float64
-		word   string
-		toggle bool
+	type part struct {
+		description string
+		count       int
 	}
 
-	myStruct.number = 3.14
-	myStruct.word = "pie"
-	myStruct.toggle = true
+	type car struct {
+		name     string
+		topSpeed float64
+	}
 
-	log.Println(myStruct.number)
-	log.Println(myStruct.word)
-	log.Println(myStruct.toggle)
+	var porsche car
+	porsche.name = "Porsche 911 R"
+	porsche.topSpeed = 323
+	log.Println(porsche.name)
+	log.Println(porsche.topSpeed)
+
+	var bolts part
+	bolts.description = "Hex bolts"
+	bolts.count = 24
+	log.Println(bolts.description)
+	log.Println(bolts.count)
+
 }
