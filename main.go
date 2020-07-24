@@ -8,17 +8,19 @@ func main() {
 
 	// Template
 	defer fileClose()
-	log.Println("7. 데이터 라벨링")
-	log.Println("키의 존재 여부 확인")
+	log.Println("8. 구조체")
 
-	counters := map[string]int{"a": 3, "b": 0}
-	var value int
-	var ok bool
+	var myStruct struct {
+		number float64
+		word   string
+		toggle bool
+	}
 
-	value, ok = counters["a"]
-	log.Println(value, ok)
-	value, ok = counters["b"]
-	log.Println(value, ok)
-	value, ok = counters["c"]
-	log.Println(value, ok)
+	myStruct.number = 3.14
+	myStruct.word = "pie"
+	myStruct.toggle = true
+
+	log.Println(myStruct.number)
+	log.Println(myStruct.word)
+	log.Println(myStruct.toggle)
 }
