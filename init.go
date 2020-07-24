@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/cckn/go.logger"
+	logger "github.com/cckn/go.logger"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -22,11 +22,11 @@ func init() {
 	log.SetFormatter(&log.JSONFormatter{
 		// DisableTimestamp: true,
 	})
-	log.Println("---------------------RUN---------------------")
+	log.Println("- - - - - - - - - - - -RUN- - - - - - - - - - - -")
 
 }
 
 func fileClose() {
-	log.Printf("---------------------END---------------------")
+	log.Printf("- - - - - - - - - - - -END- - - - - - - - - - - -")
 	_ = logFile.Close()
 }
