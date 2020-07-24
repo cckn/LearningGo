@@ -4,33 +4,19 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+func applyDiscount(s *subscriber) {
+	s.rate = 4.99
+}
+
 func main() {
 
 	// Template
 	defer fileClose()
 	log.Println("8. 구조체")
-	log.Println("사용자 정의 타입")
+	log.Println("구조체 내용 변경하기")
 
-	type part struct {
-		description string
-		count       int
-	}
-
-	type car struct {
-		name     string
-		topSpeed float64
-	}
-
-	var porsche car
-	porsche.name = "Porsche 911 R"
-	porsche.topSpeed = 323
-	log.Println(porsche.name)
-	log.Println(porsche.topSpeed)
-
-	var bolts part
-	bolts.description = "Hex bolts"
-	bolts.count = 24
-	log.Println(bolts.description)
-	log.Println(bolts.count)
+	var s subscriber
+	applyDiscount(&s)
+	log.Println(s.rate)
 
 }
