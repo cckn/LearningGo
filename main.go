@@ -4,22 +4,23 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-type MyType string
+type myNumber int
 
-func (receiver MyType) sayHi() {
-
-	log.Println(receiver)
+func (n myNumber) Add(addNum int) int {
+	return int(n) + addNum
 }
 
+func (n myNumber) Subtract(subNum int) int {
+	return int(n) - subNum
+}
 func main() {
 
 	// Template
 	defer fileClose()
 	log.Println("8. 나만의 타입 - 사용자 정의 타입")
-	log.Println("메서드")
+	log.Println("연습문제")
 
-	value := MyType("a MyType value")
-	value.sayHi()
-	value2 := MyType("a")
-	value2.sayHi()
+	var number myNumber = 100
+	log.Println(number.Add(10))
+	log.Println(number.Subtract(10))
 }
