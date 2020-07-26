@@ -1,21 +1,46 @@
 package main
 
 import (
-	"github.com/cckn/go-utils/geo"
 	log "github.com/sirupsen/logrus"
 )
 
+type NoiseMaker interface {
+	MakeSound()
+}
+
+type Whistle string
+
+func (w Whistle) MakeSound() {
+	log.Println("Tweet!")
+}
+
+type Horn string
+
+func (h Horn) MakeSound() {
+	log.Println("Honk!")
+}
+
+type Bell string
+
+func (b Bell) MakeSound() {
+	log.Println("Ring!")
+}
+
+func doubleSound(item NoiseMaker) {
+	for i := 0; i < 2; i++ {
+		item.MakeSound()
+	}
+}
+
 func main() {
 	defer fileClose()
-	log.Println("Part.10")
-	log.Println("연습 문제")
-	log.Println("landmark getter/setter")
+	log.Println("Part.11")
+	log.Println("인터페이스")
 
-	var lm geo.Landmark
-	err := lm.SetName("LF outlet")
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Println(lm.Name())
-
+	var b1 = Bell("")
+	doubleSound(b1)
+	var b2 = Whistle("")
+	doubleSound(b2)
+	var b3 = Horn("")
+	doubleSound(b3)
 }
