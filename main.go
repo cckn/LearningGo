@@ -1,26 +1,23 @@
 package main
 
-import (
-	log "github.com/sirupsen/logrus"
-)
+import log "github.com/sirupsen/logrus"
 
-type myNumber int
+type Number int
 
-func (n myNumber) Add(addNum int) int {
-	return int(n) + addNum
+func (n *Number) Double() {
+	*n *= 2
+	log.Println(*n)
 }
 
-func (n myNumber) Subtract(subNum int) int {
-	return int(n) - subNum
-}
 func main() {
 
 	// Template
 	defer fileClose()
-	log.Println("8. 나만의 타입 - 사용자 정의 타입")
-	log.Println("연습문제")
+	log.Println("포인터 리시버 매개 변수")
 
-	var number myNumber = 100
-	log.Println(number.Add(10))
-	log.Println(number.Subtract(10))
+	var n = Number(10)
+	log.Println(n)
+
+	n.Double()
+	log.Println(n)
 }
