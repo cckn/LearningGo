@@ -1,35 +1,14 @@
 package main
 
 import (
+	"github.com/cckn/go-utils/vehicle"
 	log "github.com/sirupsen/logrus"
 )
 
-type NoiseMaker interface {
-	MakeSound()
-}
-
-type Whistle string
-
-func (w Whistle) MakeSound() {
-	log.Println("Tweet!")
-}
-
-type Horn string
-
-func (h Horn) MakeSound() {
-	log.Println("Honk!")
-}
-
-type Bell string
-
-func (b Bell) MakeSound() {
-	log.Println("Ring!")
-}
-
-func doubleSound(item NoiseMaker) {
-	for i := 0; i < 2; i++ {
-		item.MakeSound()
-	}
+type Vehicles interface {
+	Accelerate()
+	Break()
+	Steer(diriection string)
 }
 
 func main() {
@@ -37,10 +16,13 @@ func main() {
 	log.Println("Part.11")
 	log.Println("인터페이스")
 
-	var b1 = Bell("")
-	doubleSound(b1)
-	var b2 = Whistle("")
-	doubleSound(b2)
-	var b3 = Horn("")
-	doubleSound(b3)
+	var v1 Vehicles = vehicle.Car("")
+	var v2 Vehicles = vehicle.Truck("")
+
+	v1.Accelerate()
+	v1.Break()
+
+	v2.Accelerate()
+	v2.Break()
+	v2.Steer("left")
 }
