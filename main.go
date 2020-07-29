@@ -1,34 +1,22 @@
 package main
 
 import (
-	"github.com/cckn/go-utils/gadget"
 	log "github.com/sirupsen/logrus"
 )
 
-type Player interface {
-	Play(string)
-	Stop()
-}
+type ComedyError string
 
-//
-// func TryOut(player Player) {
-// 	player.Play("Tast Track")
-// 	player.Stop()
-// 	recorder := player.(gadget.TapeRecorder)
-// 	recorder.Record()
-// }
+func (c ComedyError) Error() string {
+	return string(c)
+}
 
 func main() {
 	defer fileClose()
 	log.Println("Part.11")
-	log.Println("타입단언")
+	log.Println("error interface")
 
-	var player Player = gadget.TapePlayer{}
-	recorder, ok := player.(gadget.TapeRecorder)
+	var err error
+	err = ComedyError("What's a programmer's favorite beer? Logger!")
 
-	if ok {
-		recorder.Record()
-	} else {
-		log.Println("Player was not a TapeRecorder")
-	}
+	log.Println(err)
 }
