@@ -1,30 +1,31 @@
 package main
 
 import (
+	"github.com/cckn/go-utils/gadget"
 	log "github.com/sirupsen/logrus"
 )
 
-type NoiseMaker interface {
-	MakeSound()
+type Player interface {
+	Play(string)
+	Stop()
 }
 
-type Robot string
-
-func (r Robot) MakeSound() {
-	log.Println("BBeP BBeP")
-}
-func (r Robot) Walk() {
-	log.Println("Powering legs")
-}
+//
+// func TryOut(player Player) {
+// 	player.Play("Tast Track")
+// 	player.Stop()
+// 	recorder := player.(gadget.TapeRecorder)
+// 	recorder.Record()
+// }
 
 func main() {
 	defer fileClose()
 	log.Println("Part.11")
 	log.Println("타입단언")
 
-	var noiseMaker NoiseMaker = Robot("")
-	noiseMaker.MakeSound()
+	var player Player = gadget.TapePlayer{}
+	recorder, ok := player.(gadget.TapeRecorder)
 
-	var robot Robot = noiseMaker.(Robot)
-	robot.Walk()
+	log.Println(ok)
+	log.Println(recorder)
 }
