@@ -1,28 +1,30 @@
 package main
 
 import (
-	"github.com/cckn/go-utils/vehicle"
 	log "github.com/sirupsen/logrus"
 )
 
-type Vehicles interface {
-	Accelerate()
-	Break()
-	Steer(diriection string)
+type NoiseMaker interface {
+	MakeSound()
+}
+
+type Robot string
+
+func (r Robot) MakeSound() {
+	log.Println("BBeP BBeP")
+}
+func (r Robot) Walk() {
+	log.Println("Powering legs")
 }
 
 func main() {
 	defer fileClose()
 	log.Println("Part.11")
-	log.Println("인터페이스")
+	log.Println("타입단언")
 
-	var v1 Vehicles = vehicle.Car("")
-	var v2 Vehicles = vehicle.Truck("")
+	var noiseMaker NoiseMaker = Robot("")
+	noiseMaker.MakeSound()
 
-	v1.Accelerate()
-	v1.Break()
-
-	v2.Accelerate()
-	v2.Break()
-	v2.Steer("left")
+	var robot Robot = noiseMaker.(Robot)
+	robot.Walk()
 }
