@@ -26,6 +26,9 @@ func main() {
 	var player Player = gadget.TapePlayer{}
 	recorder, ok := player.(gadget.TapeRecorder)
 
-	log.Println(ok)
-	log.Println(recorder)
+	if ok {
+		recorder.Record()
+	} else {
+		log.Println("Player was not a TapeRecorder")
+	}
 }
