@@ -1,0 +1,17 @@
+
+{"level":"info","msg":"- - - - - - - - - - - -RUN- - - - - - - - - - - -","time":"2020-07-29T14:21:03+09:00"}
+{"level":"info","msg":"Part.11","time":"2020-07-29T14:21:03+09:00"}
+{"level":"info","msg":"error interface","time":"2020-07-29T14:21:03+09:00"}
+{"level":"fatal","msg":"Overheating by 21.38 defrees!","time":"2020-07-29T14:21:03+09:00"}
+
+{"level":"info","msg":"- - - - - - - - - - - -RUN- - - - - - - - - - - -","time":"2020-07-29T14:23:36+09:00"}
+{"level":"info","msg":"Part.11","time":"2020-07-29T14:23:36+09:00"}
+{"level":"info","msg":"error interface","time":"2020-07-29T14:23:36+09:00"}
+{"level":"info","msg":"LuxBrew coffee pot","time":"2020-07-29T14:23:36+09:00"}
+{"level":"info","msg":"- - - - - - - - - - - -END- - - - - - - - - - - -","time":"2020-07-29T14:23:36+09:00"}
+
+{"level":"info","msg":"- - - - - - - - - - - -RUN- - - - - - - - - - - -","time":"2020-07-29T14:23:50+09:00"}
+{"level":"info","msg":"Part.11","time":"2020-07-29T14:23:50+09:00"}
+{"level":"info","msg":"Stringer interface","time":"2020-07-29T14:23:50+09:00"}
+{"level":"info","msg":"LuxBrew coffee pot","time":"2020-07-29T14:23:50+09:00"}
+{"level":"info","msg":"- - - - - - - - - - - -END- - - - - - - - - - - -","time":"2020-07-29T14:23:50+09:00"}

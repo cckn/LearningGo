@@ -4,19 +4,18 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-type ComedyError string
+type CoffeePot string
 
-func (c ComedyError) Error() string {
-	return string(c)
+func (c CoffeePot) String() string {
+	return string(c) + " coffee pot"
 }
 
 func main() {
 	defer fileClose()
 	log.Println("Part.11")
-	log.Println("error interface")
+	log.Println("Stringer interface")
 
-	var err error
-	err = ComedyError("What's a programmer's favorite beer? Logger!")
+	coffeePot := CoffeePot("LuxBrew")
+	log.Println(coffeePot.String())
 
-	log.Println(err)
 }
