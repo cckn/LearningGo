@@ -1,0 +1,18 @@
+
+{"level":"info","msg":"- - - - - - - - - - - -RUN- - - - - - - - - - - -","time":"2020-08-03T21:55:51+09:00"}
+{"level":"info","msg":"파일 나열하기","time":"2020-08-03T21:55:51+09:00"}
+{"level":"info","msg":"Directory :  LearnGoProject","time":"2020-08-03T21:55:51+09:00"}
+{"level":"info","msg":"Directory :  LearningGo","time":"2020-08-03T21:55:51+09:00"}
+{"level":"info","msg":"- - - - - - - - - - - -END- - - - - - - - - - - -","time":"2020-08-03T21:55:51+09:00"}
+
+{"level":"info","msg":"- - - - - - - - - - - -RUN- - - - - - - - - - - -","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"파일 나열하기","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"Directory :  .git","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"File :  .gitignore","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"Directory :  .idea","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"File :  data.txt","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"File :  init.go","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"Directory :  logs","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"File :  main.go","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"File :  main_test.go","time":"2020-08-03T21:56:01+09:00"}
+{"level":"info","msg":"- - - - - - - - - - - -END- - - - - - - - - - - -","time":"2020-08-03T21:56:01+09:00"}
